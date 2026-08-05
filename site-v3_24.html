@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23FFFC00'/%3E%3Cpath d='M12 5.5l1.7 4.3 4.6.4-3.5 3 1.1 4.5-3.9-2.5-3.9 2.5 1.1-4.5-3.5-3 4.6-.4z' fill='%23000'/%3E%3C/svg%3E">
+
+<!-- Open Graph / partage social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SnapStar Agency">
+<meta property="og:title" content="SnapStar Agency · Certification Snapchat & Monétisation">
+<meta property="og:description" content="Le badge Snapchat n'est pas une formalité. C'est ta porte vers de vrais revenus, des collaborations avec de vraies marques, et la reconnaissance que tu mérites.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://snapstarguide.com/">
+<link rel="canonical" href="https://snapstarguide.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SnapStar Agency · Certification Snapchat & Monétisation">
+<meta name="twitter:description" content="Le badge Snapchat n'est pas une formalité. C'est ta porte vers de vrais revenus, des collaborations avec de vraies marques, et la reconnaissance que tu mérites.">
+
+<title>Certification Créateurs · Badge vérifié & Monétisation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --black:#000000;
+    --ink:#1D1D1F;
+    --ink-soft:#F5F5F7;
+    --muted:#6E6E73;
+    --muted-dark:#A1A1A6;
+    --line:rgba(0,0,0,0.08);
+    --line-dark:rgba(255,255,255,0.12);
+    --yellow:#FFFC00;
+    --green:#1E9E5A;
+    --radius:26px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
+  html{ scroll-behavior:smooth; background:#FFFFFF; overflow-x:hidden; }
+  body{
+    background:var(--white); color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif;
+    line-height:1.47;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    font-weight:400;
+  }
+  h1,h2,h3{ font-weight:700; letter-spacing:-0.03em; line-height:1.04; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 24px; }
+  .wrap-narrow{ max-width:780px; margin:0 auto; padding:0 24px; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 22px; border-radius:980px; font-weight:600; font-size:14px;
+    cursor:pointer; border:none; transition:transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+    touch-action:manipulation;
+  }
+  .btn-primary{ background:var(--yellow); color:var(--black); }
+  .btn-primary:hover{ transform:translateY(-2px) scale(1.02); box-shadow:0 10px 24px -8px rgba(0,0,0,0.18); }
+  .btn-primary:active{ transform:translateY(0) scale(0.97); box-shadow:none; transition:transform .1s ease; }
+  .btn-link:active{ transform:scale(0.97); }
+  .btn-link{ font-size:15px; font-weight:500; color:#0071E3; display:inline-flex; align-items:center; gap:4px; }
+  .btn-link::after{ content:"→"; transition:transform .2s ease; }
+  .btn-link:hover::after{ transform:translateX(3px); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:0; height:52px; display:flex; align-items:center;
+    background:rgba(255,255,255,0.72); backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid transparent; transition:border-color .3s;
+  }
+  header.scrolled{ border-bottom-color:var(--line); }
+  header .wrap{ display:flex; align-items:center; justify-content:space-between; width:100%; }
+  .logo{ font-weight:700; font-size:15px; display:flex; align-items:center; gap:7px; letter-spacing:-0.01em; }
+  .logo svg{ width:18px; height:18px; }
+  nav.links{ display:none; gap:30px; font-size:12.5px; color:var(--ink); font-weight:400; }
+  @media(min-width:820px){ nav.links{ display:flex; } }
+
+  .lang-switch{ display:flex; gap:2px; background:var(--ink-soft); border-radius:999px; padding:3px; }
+  .lang-switch button{
+    border:none; background:transparent; padding:8px 12px; border-radius:999px; touch-action:manipulation;
+    font-size:11.5px; font-weight:600; color:var(--muted); cursor:pointer;
+    font-family:'Inter',sans-serif; transition:background .15s, color .15s;
+  }
+  .lang-switch button.active{ background:var(--white); color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,0.1); }
+
+  /* ---------- RTL (Arabic) ---------- */
+  [dir="rtl"] .s-head{ text-align:right !important; }
+  [dir="rtl"] .quiz-options button{ text-align:right; unicode-bidi:plaintext; }
+  [dir="rtl"] .price-card .amount{ unicode-bidi:plaintext; }
+  [dir="rtl"] select option{ unicode-bidi:plaintext; }
+  [dir="rtl"] .field input{ unicode-bidi:plaintext; }
+  [dir="rtl"] .mid-proof{ border-left:none; border-right:3px solid var(--yellow); padding-left:0; padding-right:20px; }
+  [dir="rtl"] .price-list{ text-align:right; }
+  [dir="rtl"] .step-risk{ text-align:right; }
+  [dir="rtl"] .btn-link::after{ content:"←"; }
+  [dir="rtl"] .field label{ text-align:right; }
+  [dir="rtl"] .modal-head{ direction:rtl; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:110px 24px 60px; position:relative; overflow:hidden;
+  }
+  .hero .kicker{ font-size:13px; line-height:19px; color:var(--muted); font-weight:600; margin-bottom:14px; }
+  .hero h1{
+    font-size:clamp(40px, 7vw, 88px); max-width:920px; margin:0 auto 20px;
+  }
+  @media(max-width:480px){
+    .hero h1{ font-size:clamp(26px, 7.5vw, 32px); }
+  }
+  .hero p.lead{ font-size:clamp(17px,2vw,22px); color:var(--muted); max-width:560px; margin:0 auto 34px; font-weight:400; }
+  @media(max-width:480px){
+    .hero p.lead{ font-size:15px; line-height:1.55; max-width:340px; }
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:22px; align-items:center; justify-content:center; }
+
+  /* ---------- BADGE HERO VISUAL ---------- */
+  .badge-hero{ margin-top:70px; display:flex; justify-content:center; perspective:900px; position:relative; }
+  .badge-glow{
+    position:absolute; inset:-50% -10%; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,252,0,0.5), transparent 70%);
+    opacity:0; transition:opacity .4s ease; pointer-events:none; z-index:0; filter:blur(14px);
+  }
+  .badge-float{ animation:float 6s ease-in-out infinite; position:relative; z-index:1; }
+  .badge-orb{
+    width:190px; height:190px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #FFFF66, var(--yellow) 55%, #E6D400 100%);
+    box-shadow:0 20px 50px -18px rgba(255,252,0,0.4), inset 0 -10px 30px rgba(0,0,0,0.12), inset 0 8px 20px rgba(255,255,255,0.6);
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+    transition:transform .2s ease-out;
+    will-change:transform;
+  }
+  .badge-orb::after{
+    content:""; position:absolute; top:-60%; left:-150%; width:55%; height:220%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,0.6), transparent);
+    transform:rotate(18deg);
+    animation:shineSweep 5.5s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes shineSweep{ 0%{ left:-150%; } 20%{ left:150%; } 100%{ left:150%; } }
+  @keyframes float{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-14px); } }
+  .badge-orb svg{ width:82px; height:82px; position:relative; z-index:2; }
+
+  .kicker-row{ display:flex; align-items:flex-start; justify-content:center; gap:8px; }
+  .kicker-row .kicker{ text-align:left; }
+  [dir="rtl"] .kicker-row .kicker{ text-align:right; }
+  .mini-avatars{ display:flex; align-items:center; height:19px; }
+  .mini-avatars img{
+    width:19px; height:19px; border-radius:50%; border:2px solid #FFFFFF;
+    margin-left:-6px; flex-shrink:0; object-fit:cover; display:block;
+    box-shadow:0 0 0 1px rgba(0,0,0,0.08); box-sizing:border-box;
+  }
+  .mini-avatars img:first-child{ margin-left:0; }
+  [dir="rtl"] .mini-avatars img{ margin-left:0; margin-right:-6px; }
+  [dir="rtl"] .mini-avatars img:first-child{ margin-right:0; }
+
+  @media (hover:none){
+    .badge-orb{ animation:autoTilt 8s ease-in-out infinite; }
+  }
+  @keyframes autoTilt{
+    0%,100%{ transform:rotateY(-7deg) rotateX(2deg); }
+    50%{ transform:rotateY(7deg) rotateX(-2deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .badge-float{ animation:none; }
+    .badge-orb{ transition:none; animation:none; }
+    .badge-orb::after{ animation:none; display:none; }
+  }
+
+  /* ---------- SECTION shells ---------- */
+  section{ padding:104px 0; }
+
+  /* ---------- COMPARISON TABLE (grille intégrée) ---------- */
+  .compare-table{
+    border:1px solid var(--line-dark); border-radius:20px; overflow:hidden;
+    max-width:640px; margin:0 auto; background:var(--black);
+  }
+  .compare-row{ display:grid; grid-template-columns:1.3fr 1fr 1.2fr; }
+  .compare-row + .compare-row{ border-top:1px solid var(--line-dark); }
+  .compare-cell{ padding:16px 14px; font-size:13px; display:flex; align-items:center; gap:8px; color:var(--muted-dark); }
+  .compare-label{ font-weight:600; font-size:13px; color:var(--white); }
+  .compare-icon{ width:15px; height:15px; flex-shrink:0; color:var(--muted-dark); }
+  .compare-head .compare-cell{ font-weight:600; font-size:12.5px; color:var(--muted-dark); text-transform:uppercase; letter-spacing:0.04em; }
+  .compare-us{ background:var(--yellow); color:#000; font-weight:600; }
+  .compare-head .compare-us{ color:#000; }
+  .compare-check{
+    width:16px; height:16px; border-radius:50%; background:#000; color:var(--yellow);
+    display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; flex-shrink:0;
+  }
+  @media(max-width:480px){
+    .compare-row{ grid-template-columns:1.4fr 0.9fr 1fr; }
+    .compare-cell{ font-size:11px; padding:12px 8px; gap:6px; }
+    .compare-label{ font-size:11px; }
+    .compare-icon{ width:13px; height:13px; }
+  }
+  [dir="rtl"] .compare-icon{ transform:scaleX(-1); }
+
+  .compare-closing{ text-align:center; margin-top:34px; }
+  .compare-closing p{ font-family:'Fraunces',serif; font-size:clamp(20px,3vw,26px); color:var(--white); margin-bottom:20px; }
+  .section.dark{ background:var(--black); color:var(--white); }
+  .section.soft{ background:var(--ink-soft); }
+  .s-head{ text-align:center; max-width:640px; margin:0 auto 52px; }
+  .s-head .kicker{ font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+  .dark .s-head .kicker{ color:var(--muted-dark); }
+  .s-head h2{ font-size:clamp(26px,4vw,42px); margin-top:14px; }
+  .s-head p{ font-size:clamp(15.5px,1.6vw,18px); color:var(--muted); margin-top:16px; font-weight:400; }
+  .dark .s-head p{ color:var(--muted-dark); }
+
+  /* ---------- FEATURE GRID (Problem/Solution reframed) ---------- */
+  .feat-grid{ display:grid; gap:20px; }
+  @media(min-width:760px){ .feat-grid{ grid-template-columns:repeat(2,1fr); } }
+  .feat-card{
+    background:var(--white); border-radius:18px; padding:24px 22px;
+    border:1px solid var(--line); transition:transform .25s ease, box-shadow .25s ease;
+  }
+  @media (hover:hover){ .feat-card:hover{ transform:translateY(-4px); box-shadow:0 16px 32px -16px rgba(0,0,0,0.14); } }
+  .feat-card .before{ font-size:12px; color:var(--muted); text-decoration:line-through; margin-bottom:9px; }
+  .feat-card h3{ font-size:clamp(17px,2vw,20px); font-weight:600; letter-spacing:-0.01em; margin-bottom:7px; }
+  .feat-card p{ font-size:clamp(13.5px,1.4vw,15px); color:var(--muted); }
+
+  /* ---------- QUIZ ---------- */
+  .quiz-card{
+    max-width:520px; margin:0 auto; background:var(--white);
+    border:1px solid var(--line); border-radius:26px; padding:34px 28px;
+    box-shadow:0 24px 50px -30px rgba(0,0,0,0.15);
+  }
+  .quiz-progress{ display:flex; gap:6px; justify-content:center; margin-bottom:26px; }
+  .quiz-progress .dot{ width:28px; height:4px; border-radius:99px; background:var(--line); transition:background .3s ease, transform .2s ease; }
+  .quiz-progress .dot.done{ transform:scaleX(1.1); }
+  .quiz-progress .dot.active{ background:var(--ink); }
+  .quiz-progress .dot.done{ background:var(--yellow); }
+  .quiz-q{ font-size:18px; font-weight:600; text-align:center; margin-bottom:22px; letter-spacing:-0.01em; }
+  .quiz-options{ display:grid; gap:10px; }
+  .quiz-options button{
+    width:100%; padding:14px 18px; border-radius:14px; border:1.5px solid var(--line);
+    background:var(--ink-soft); font-family:'Inter',sans-serif; font-size:14.5px; font-weight:500;
+    color:var(--ink); text-align:left; cursor:pointer; transition:border-color .15s, background .15s;
+  }
+  .quiz-options button:hover{ border-color:var(--ink); background:var(--white); }
+  .quiz-options button:active{ transform:scale(0.97); background:var(--yellow); border-color:var(--ink); }
+  .quiz-result{ text-align:center; }
+  .quiz-result-icon{
+    width:48px; height:48px; border-radius:50%; background:var(--yellow); border:1.5px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; font-weight:800; margin:0 auto 16px;
+  }
+  .quiz-result-title{ font-size:20px; margin-bottom:10px; }
+  .quiz-result-text{ font-size:14px; color:var(--muted); margin-bottom:22px; line-height:1.55; }
+  .quiz-result .btn-primary{ width:100%; }
+
+  /* ---------- BIG STATEMENT ---------- */
+  .statement{ text-align:center; }
+  .statement h2{ font-size:clamp(28px,5.5vw,52px); max-width:920px; margin:0 auto; }
+  .statement h2 .dim{ color:var(--muted-dark); }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .t-scroller{ display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 24px 20px; }
+  .t-scroller::-webkit-scrollbar{ display:none; }
+  .t-card{
+    flex:0 0 auto; width:200px; scroll-snap-align:start;
+    background:var(--white); border-radius:20px; overflow:hidden; border:1px solid var(--line);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  @media (hover:hover){ .t-card:hover{ transform:translateY(-4px); box-shadow:0 16px 32px -16px rgba(0,0,0,0.16); } }
+  .t-video{ aspect-ratio:9/16; background:linear-gradient(160deg,#F0F0F2,#E4E4E7); position:relative; display:flex; align-items:center; justify-content:center; }
+  .t-video .play{ width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.9); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+  .t-video .play::after{ content:""; width:0; height:0; border-left:9px solid var(--ink); border-top:6px solid transparent; border-bottom:6px solid transparent; margin-left:2px; }
+  .t-video .result{ position:absolute; top:10px; right:10px; background:var(--yellow); color:var(--black); font-size:10px; font-weight:700; padding:4px 9px; border-radius:999px; }
+  .t-body{ padding:14px 15px 17px; }
+  .t-body .q-ar{ direction:rtl; text-align:right; font-size:13px; margin-bottom:6px; line-height:1.65; }
+  .t-body .q-fr{ font-size:11.5px; color:var(--muted); font-style:italic; }
+  .t-body .name{ margin-top:10px; font-size:11px; font-weight:600; }
+
+  /* ---------- STEPS ---------- */
+  .steps{ display:grid; gap:1px; background:var(--line-dark); border-radius:var(--radius); overflow:hidden; }
+  @media(min-width:760px){ .steps{ grid-template-columns:repeat(3,1fr); } }
+
+  .step-track{
+    display:flex; align-items:center; justify-content:center; gap:0;
+    max-width:480px; margin:0 auto 44px;
+  }
+  .step-node{
+    width:36px; height:36px; border-radius:50%; background:var(--yellow); color:#000;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px;
+    flex-shrink:0; position:relative; z-index:1;
+  }
+  .step-line{ flex:1; height:2px; background:var(--line-dark); position:relative; overflow:hidden; margin:0 4px; }
+  .step-line::after{
+    content:""; position:absolute; inset:0; background:var(--yellow);
+    transform:scaleX(0); transform-origin:left; transition:transform 1s ease;
+  }
+  .step-track.in #line1::after{ transform:scaleX(1); }
+  .step-track.in #line2::after{ transform:scaleX(1); transition-delay:.6s; }
+  .step{ background:var(--black); padding:36px 28px; transition:background .25s ease; }
+  @media (hover:hover){ .step:hover{ background:#0d0d0d; } }
+  .step .num{ font-size:15px; color:var(--yellow); font-weight:700; margin-bottom:18px; }
+  .step h3{ font-size:clamp(18px,2vw,21px); margin-bottom:10px; }
+  .step p{ font-size:clamp(13.5px,1.4vw,15px); color:var(--muted-dark); }
+  .step-meta{ margin-top:16px; }
+  .step-time{
+    display:inline-block; font-size:11.5px; font-weight:600; color:var(--yellow);
+    background:rgba(255,252,0,0.1); padding:5px 11px; border-radius:999px;
+  }
+  .step-risk{
+    margin-top:14px; font-size:13px; color:var(--muted-dark);
+    padding-top:14px; border-top:1px solid var(--line-dark);
+  }
+
+  .mid-proof{
+    text-align:left; max-width:560px; margin:48px auto 0;
+    padding-left:20px; border-left:3px solid var(--yellow);
+  }
+  .mid-proof-tag{
+    display:block; font-size:11px; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--yellow); margin-bottom:10px;
+  }
+  .mid-proof .q-fr{ font-size:17px; color:var(--white); font-style:italic; font-weight:500; line-height:1.5; }
+  .mid-proof-caption{ font-size:12.5px; color:var(--muted-dark); margin-top:10px; }
+
+  .steps-cta{ text-align:center; margin-top:40px; }
+  .steps-cta p{ font-size:14px; color:var(--muted-dark); margin-bottom:18px; }
+
+  /* ---------- PROOF ---------- */
+  .proof-grid{ display:grid; gap:16px; grid-template-columns:repeat(2,1fr); }
+  @media(min-width:760px){ .proof-grid{ grid-template-columns:repeat(4,1fr); } }
+  .proof-shot{
+    aspect-ratio:9/16; border-radius:20px; background:linear-gradient(155deg,#F0F0F2,#E4E4E7);
+    border:1px solid var(--line); position:relative; display:flex; align-items:flex-end; padding:16px;
+  }
+  .proof-shot span{ font-size:11.5px; font-weight:600; background:rgba(255,255,255,0.85); padding:5px 9px; border-radius:8px; }
+
+  /* ---------- PRICING ---------- */
+  .price-card{
+    max-width:420px; margin:0 auto; background:var(--white); border-radius:26px;
+    padding:38px 32px; border:1px solid var(--line); text-align:center;
+    box-shadow:0 24px 50px -26px rgba(0,0,0,0.18);
+  }
+  .price-card .plan{ font-size:14px; color:var(--muted); font-weight:600; margin-bottom:8px; }
+  .price-card .amount{ font-size:clamp(42px,10vw,56px); font-weight:700; letter-spacing:-0.03em; }
+  .price-card .amount span{ font-size:16px; color:var(--muted); font-weight:500; }
+  .price-card .split{ font-size:14px; color:var(--muted); margin:8px 0 30px; }
+  .price-list{ list-style:none; display:grid; gap:13px; margin-bottom:32px; text-align:left; }
+  .price-list li{ display:flex; gap:10px; font-size:15px; align-items:flex-start; }
+  .price-list li::before{ content:"✓"; color:var(--black); font-weight:800; }
+  .price-card .btn{ width:100%; }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-item summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding:24px 2px; font-size:clamp(16px,2vw,18px); font-weight:600; }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{ content:"+"; font-size:22px; color:var(--muted); transition:transform .2s; font-weight:400; }
+  .faq-item[open] summary::after{ transform:rotate(45deg); }
+  .faq-item p{ padding:0 2px 24px; color:var(--muted); font-size:15px; max-width:600px; }
+
+  /* ---------- FINAL CTA ---------- */
+  .final{ text-align:center; }
+  .final h2{ font-size:clamp(28px,5.5vw,52px); max-width:680px; margin:0 auto 30px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:50px 0 40px; border-top:1px solid var(--line); }
+  footer .wrap{ display:flex; flex-direction:column; gap:2px; }
+  footer p{ color:var(--muted); font-size:12px; }
+  .footer-links{ margin-top:10px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .footer-link-btn{
+    background:none; border:none; padding:0; margin:0; cursor:pointer;
+    font-family:'Inter',sans-serif; font-size:12px; color:var(--muted);
+    text-decoration:underline; text-decoration-color:var(--line);
+  }
+  .footer-link-btn:hover{ color:var(--ink); }
+  .footer-sep{ color:var(--line); font-size:12px; }
+  .legal-panel{
+    margin-top:14px; padding:16px 18px; background:var(--ink-soft);
+    border-radius:12px; max-width:520px;
+  }
+  .legal-panel p{ font-size:12.5px; line-height:1.6; color:var(--muted); }
+
+  .fab{
+    position:fixed; bottom:22px; right:22px; z-index:90;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--yellow); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px -8px rgba(0,0,0,0.35);
+    transition:transform .2s ease;
+  }
+  .fab:active{ transform:scale(0.94); }
+  .fab svg{ width:26px; height:26px; }
+
+  .exit-toast{
+    position:fixed; left:20px; right:20px; bottom:20px; max-width:380px; margin:0 auto;
+    background:var(--white); border:1.5px solid var(--ink); border-radius:20px;
+    padding:20px 20px 18px; box-shadow:0 20px 44px -16px rgba(0,0,0,0.28);
+    z-index:150; transform:translateY(130%); transition:transform .4s cubic-bezier(.2,.8,.2,1);
+  }
+  .exit-toast.show{ transform:translateY(0); }
+  .exit-toast p{ font-size:14px; font-weight:600; padding-right:22px; line-height:1.4; }
+  .exit-toast-close{
+    position:absolute; top:12px; right:14px; background:none; border:none; font-size:13px;
+    color:var(--muted); cursor:pointer; padding:4px;
+  }
+
+  /* ---------- MODAL FORM ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(29,29,31,0.55);
+    backdrop-filter:blur(6px);
+    display:flex; align-items:flex-end; justify-content:center;
+    opacity:0; pointer-events:none;
+    transition:opacity .28s ease;
+  }
+  .modal-overlay.open{ opacity:1; pointer-events:auto; }
+  @media(min-width:640px){ .modal-overlay{ align-items:center; } }
+
+  .modal-card{
+    background:var(--white); width:100%; max-width:520px;
+    border-radius:28px 28px 0 0;
+    padding:30px 24px calc(28px + env(safe-area-inset-bottom));
+    max-height:90vh; overflow-y:auto;
+    transform:translateY(40px);
+    transition:transform .32s cubic-bezier(.2,.8,.2,1);
+  }
+  .modal-overlay.open .modal-card{ transform:translateY(0); }
+  @media(min-width:640px){
+    .modal-card{ border-radius:28px; padding:36px 34px; max-height:85vh; }
+  }
+
+  .modal-head{ display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:6px; }
+  .modal-head h3{ font-size:24px; max-width:380px; }
+  .modal-close{
+    width:32px; height:32px; border-radius:50%; background:var(--ink-soft);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-size:16px; cursor:pointer; border:none; color:var(--ink);
+  }
+  .modal-sub{ font-size:14px; color:var(--muted); margin-bottom:26px; }
+
+  .field{ margin-bottom:16px; }
+  .field label{ display:block; font-size:12.5px; font-weight:600; color:var(--ink); margin-bottom:7px; }
+  .field .opt{ font-weight:400; color:var(--muted); }
+  .field input, .field select{
+    width:100%; padding:13px 15px; border-radius:12px;
+    border:1.5px solid var(--line); background:var(--ink-soft);
+    font-family:'Inter',sans-serif; font-size:16px; color:var(--ink);
+    outline:none; transition:border-color .15s ease, background .15s ease;
+    -webkit-appearance:none; appearance:none;
+  }
+  .field select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236E6E73' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 14px center;
+  }
+  .field input:focus, .field select:focus{ border-color:var(--ink); background:var(--white); }
+  .field-row{ display:grid; grid-template-columns:1fr; gap:12px; }
+  @media(min-width:480px){ .field-row.two{ grid-template-columns:1fr 1fr; } }
+
+  .form-note{ font-size:12px; color:var(--muted); margin:14px 0 20px; line-height:1.5; }
+  .modal-card .btn-primary{ width:100%; }
+
+  .check-pop{ display:inline-block; font-size:18px; animation:checkPop .4s cubic-bezier(.2,.9,.3,1.4) both; }
+  @keyframes checkPop{ 0%{ transform:scale(0); opacity:0; } 60%{ transform:scale(1.3); } 100%{ transform:scale(1); opacity:1; } }
+
+  ::selection{ background:var(--yellow); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "url": "https://snapstarguide.com/",
+  "name": "SnapStar Agency",
+  "description": "Agence américaine spécialisée dans la certification Snapchat et l'accès à la monétisation pour créateurs, artistes, personnalités publiques et marques.",
+  "areaServed": "Worldwide",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  }
+}
+</script>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#FFFC00"/><path d="M12 5.5l1.7 4.3 4.6.4-3.5 3 1.1 4.5-3.9-2.5-3.9 2.5 1.1-4.5-3.5-3 4.6-.4z" fill="#000"/></svg>
+      SnapStar Agency
+    </div>
+    <nav class="links">
+      <a href="#comment" data-i18n="nav_process">Le process</a>
+      <a href="#preuve" data-i18n="nav_results">Résultats</a>
+      <a href="#offre" data-i18n="nav_offer">L'offre</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" data-lang="fr" class="active">FR</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ar">AR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+  <section class="hero">
+    <div class="kicker-row">
+      <div class="mini-avatars">
+        <img src="data:image/jpeg;base64,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" alt="Créatrice certifiée accompagnée par SnapStar Agency">
+        <img src="data:image/jpeg;base64,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" alt="Créatrice certifiée accompagnée par SnapStar Agency">
+        <img src="data:image/jpeg;base64,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" alt="Créateur certifié accompagné par SnapStar Agency">
+      </div>
+      <div class="kicker" data-i18n="hero_kicker">+5 000 créateurs & marques accompagnés</div>
+    </div>
+    <h1 data-i18n="hero_h1">Pendant que tu hésites,<br>d'autres sont<br>déjà payées.</h1>
+    <p class="lead" data-i18n="hero_lead">Le badge Snapchat n'est pas une formalité. C'est ta porte vers de vrais revenus, des collaborations avec de vraies marques, et la reconnaissance que tu mérites.</p>
+    <div class="hero-actions">
+      <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_reserve_audit">Réserver mon audit gratuit</button>
+      <a href="#comment" class="btn-link" data-i18n="hero_link">Voir comment ça marche</a>
+    </div>
+    <div class="badge-hero reveal">
+      <div class="badge-glow" id="badgeGlow"></div>
+      <div class="badge-float">
+        <div class="badge-orb" id="badgeOrb">
+          <svg viewBox="0 0 24 24"><path d="M12 3l2.5 6.2 6.7.5-5.1 4.4 1.6 6.5-5.7-3.6-5.7 3.6 1.6-6.5-5.1-4.4 6.7-.5z" fill="#000"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- BIG STATEMENT -->
+  <section class="section dark">
+    <div class="wrap-narrow statement reveal">
+      <h2 data-i18n="statement_h2">Chaque semaine sans badge, c'est une semaine de contenu publié <span class="dim">gratuitement</span>, pendant que d'autres sont déjà <span class="dim">payées pour le même travail.</span></h2>
+    </div>
+  </section>
+
+<!-- QUIZ ELIGIBILITE -->
+  <section id="quiz">
+    <div class="wrap-narrow">
+      <div class="s-head reveal"><div class="kicker" style="justify-content:center;" data-i18n="quiz_kicker">Vérifie en 30 secondes</div><h2 style="text-align:center;" data-i18n="quiz_h2">Es-tu éligible ?</h2></div>
+
+      <div class="quiz-card reveal">
+        <div class="quiz-progress">
+          <span class="dot active" data-dot="1"></span>
+          <span class="dot" data-dot="2"></span>
+          <span class="dot" data-dot="3"></span>
+        </div>
+
+        <div class="quiz-step" data-step="1">
+          <p class="quiz-q" data-i18n="quiz_q1">Combien d'abonnés as-tu sur Snapchat ?</p>
+          <div class="quiz-options">
+            <button type="button" data-q="followers" data-value="u1k" data-i18n="opt_f_u1k">Moins de 1 000</button>
+            <button type="button" data-q="followers" data-value="1k10k" data-i18n="opt_f_1k10k">1 000 – 10 000</button>
+            <button type="button" data-q="followers" data-value="10k50k" data-i18n="opt_f_10k50k">10 000 – 50 000</button>
+            <button type="button" data-q="followers" data-value="50k200k" data-i18n="opt_f_50kplus">50 000 et plus</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="2" hidden>
+          <p class="quiz-q" data-i18n="quiz_q2">À quelle fréquence postes-tu du contenu ?</p>
+          <div class="quiz-options">
+            <button type="button" data-q="freq" data-value="daily" data-i18n="opt_freq_daily">Tous les jours</button>
+            <button type="button" data-q="freq" data-value="weekly" data-i18n="opt_freq_weekly">Plusieurs fois par semaine</button>
+            <button type="button" data-q="freq" data-value="rare" data-i18n="opt_freq_rare">Rarement</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="3" hidden>
+          <p class="quiz-q" data-i18n="quiz_q3">As-tu déjà essayé de te faire vérifier seule ?</p>
+          <div class="quiz-options">
+            <button type="button" data-q="tried" data-value="yes" data-i18n="opt_tried_yes">Oui, et j'ai été refusée</button>
+            <button type="button" data-q="tried" data-value="no" data-i18n="opt_tried_no">Non, jamais essayé</button>
+          </div>
+        </div>
+
+        <div class="quiz-result" hidden>
+          <div class="quiz-result-icon">✓</div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-text"></p>
+          <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_quiz_cta">Réserver mon créneau</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- AUTHORITY / SCALE -->
+  <section>
+    <div class="wrap-narrow reveal" style="text-align:center;">
+      <div class="kicker" style="justify-content:center;" data-i18n="authority_kicker">Notre expertise</div>
+      <h2 id="statNumber" data-target="5000" style="font-size:clamp(48px,10vw,84px); font-weight:700; letter-spacing:-0.03em; margin-top:14px;">+0</h2>
+      <p style="font-size:clamp(15.5px,1.6vw,18px); color:var(--muted); margin-top:12px; max-width:520px; margin-left:auto; margin-right:auto;" data-i18n="authority_text">créateurs, artistes, personnalités publiques et marques déjà accompagnés dans leur vérification, partout dans le monde.</p>
+    </div>
+  </section>
+
+<!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <div class="s-head reveal">
+        <div class="kicker" data-i18n="features_kicker">Ce qui change</div>
+        <h2 data-i18n="features_h2">Le vrai obstacle,<br>résolu.</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card reveal"><div class="before" data-i18n="feat1_before">Refusée sans explication</div><h3 data-i18n="feat1_h3">Audit gratuit avant tout</h3><p data-i18n="feat1_p">On analyse ton compte et on identifie exactement ce qui bloque, en 48h.</p></div>
+        <div class="feat-card reveal"><div class="before" data-i18n="feat2_before">Le badge semble décoratif</div><h3 data-i18n="feat2_h3">Accès réel à la monétisation</h3><p data-i18n="feat2_p">Spotlight, Creator Rewards&nbsp;: le badge est la clé, pas la finalité.</p></div>
+        <div class="feat-card reveal"><div class="before" data-i18n="feat3_before">Peur que ce soit une arnaque</div><h3 data-i18n="feat3_h3">On paie une fois vue ta chance</h3><p data-i18n="feat3_p">Ton compte est évalué avant tout paiement. Transparence totale.</p></div>
+        <div class="feat-card reveal"><div class="before" data-i18n="feat4_before">Les marques t'ignorent</div><h3 data-i18n="feat4_h3">Le badge ouvre les portes</h3><p data-i18n="feat4_p">La vérification change la façon dont les marques te perçoivent, que tu sois créatrice, artiste, ou une entreprise.</p></div>
+      </div>
+    </div>
+  </section>
+
+<!-- STEPS -->
+  <section class="section dark" id="comment">
+    <div class="wrap">
+      <div class="s-head reveal"><div class="kicker" data-i18n="steps_kicker">Le process, en détail</div><h2 data-i18n="steps_h2">Trois étapes.<br>Zéro risque de ton côté.</h2></div>
+
+      <div class="step-track reveal" id="stepTrack">
+        <div class="step-node">01</div>
+        <div class="step-line" id="line1"></div>
+        <div class="step-node">02</div>
+        <div class="step-line" id="line2"></div>
+        <div class="step-node">03</div>
+      </div>
+
+      <div class="steps steps-detailed">
+        <div class="step reveal">
+          <div class="num">01</div>
+          <h3 data-i18n="step1_h3">Audit gratuit</h3>
+          <p data-i18n="step1_p">On analyse ton compte et on te dit honnêtement tes chances.</p>
+          <div class="step-meta"><span class="step-time" data-i18n="step1_time">⏱ 24-48h</span></div>
+          <p class="step-risk" data-i18n="step1_risk">Aucun engagement. Si tes chances sont faibles, on te le dit et tu ne paies rien.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">02</div>
+          <h3 data-i18n="step2_h3">Soumission du dossier</h3>
+          <p data-i18n="step2_p">On prépare et soumet ton dossier avec les bons éléments, ceux que Snapchat attend vraiment.</p>
+          <div class="step-meta"><span class="step-time" data-i18n="step2_time">⏱ Jusqu'à 30 jours</span></div>
+          <p class="step-risk" data-i18n="step2_risk">50% du paiement seulement à cette étape. Le reste, une fois le badge validé.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">03</div>
+          <h3 data-i18n="step3_h3">Badge & accès débloqué</h3>
+          <p data-i18n="step3_p">Certification obtenue, monétisation débloquée : Spotlight, Creator Rewards, collaborations.</p>
+          <div class="step-meta"><span class="step-time" data-i18n="step3_time">✓ Suivi jusqu'au bout</span></div>
+          <p class="step-risk" data-i18n="step3_risk">On reste disponible après validation pour t'aider à démarrer la monétisation.</p>
+        </div>
+      </div>
+
+      <div class="mid-proof reveal">
+        <span class="mid-proof-tag" data-i18n="midproof_tag">Ce process, en pratique</span>
+        <p class="q-fr" data-i18n="midproof_quote">"Refusée 3 fois seule, certifiée en une semaine avec eux."</p>
+        <p class="mid-proof-caption" data-i18n="midproof_caption">Résultat obtenu en suivant exactement les 3 étapes ci-dessus.</p>
+      </div>
+
+      <div class="steps-cta reveal">
+        <p data-i18n="stepscta_p">Il reste des places disponibles ce mois-ci. L'audit prend 2 minutes et ne coûte rien.</p>
+        <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_steps_cta">Commencer maintenant</button>
+      </div>
+    </div>
+  </section>
+
+<!-- TESTIMONIALS -->
+  <section class="section soft">
+    <div class="s-head reveal" style="margin-left:24px; margin-right:24px; text-align:left; max-width:680px;">
+      <div class="kicker" data-i18n="testimonials_kicker">Résultats</div>
+      <h2 style="font-size:clamp(26px,4vw,42px);" data-i18n="testimonials_h2">Dans leurs mots.</h2>
+    </div>
+    <div class="t-scroller">
+      <div class="t-card reveal"><div class="t-video"><div class="play"></div><div class="result" data-i18n="t1_result">1 semaine</div></div><div class="t-body"><p class="q-ar">جربت ٣ مرات لحالي، توثقت خلال أسبوع معهم.</p><p class="q-fr" data-i18n="t1_fr">"Refusée 3 fois seule, certifiée en une semaine."</p><p class="name" data-i18n="t_name">Prénom, ville</p></div></div>
+      <div class="t-card reveal"><div class="t-video"><div class="play"></div><div class="result" data-i18n="t2_result">1er paiement</div></div><div class="t-body"><p class="q-ar">أول شهر قبضت أول مبلغ من Spotlight.</p><p class="q-fr" data-i18n="t2_fr">"Premier mois, premier vrai paiement."</p><p class="name" data-i18n="t_name">Prénom, ville</p></div></div>
+      <div class="t-card reveal"><div class="t-video"><div class="play"></div><div class="result" data-i18n="t3_result">2 semaines</div></div><div class="t-body"><p class="q-ar">علامة تجارية تواصلت معي بعد أسبوعين.</p><p class="q-fr" data-i18n="t3_fr">"Une marque m'a contactée 2 semaines après."</p><p class="name" data-i18n="t_name">Prénom, ville</p></div></div>
+      <div class="t-card reveal"><div class="t-video"><div class="play"></div><div class="result" data-i18n="t4_result">Transparence</div></div><div class="t-body"><p class="q-ar">شافوا حسابي مجاناً قبل ما أدفع.</p><p class="q-fr" data-i18n="t4_fr">"Ils ont regardé mon compte avant que je paie."</p><p class="name" data-i18n="t_name">Prénom, ville</p></div></div>
+    </div>
+  </section>
+
+<!-- PROOF -->
+  <section id="preuve">
+    <div class="wrap">
+      <div class="s-head reveal"><div class="kicker" data-i18n="proof_kicker">Preuve brute</div><h2 data-i18n="proof_h2">Pas de mise en scène.</h2><p data-i18n="proof_p">Directement tirées de vraies conversations avec nos clientes, capture par capture.</p></div>
+      <div class="proof-grid">
+        <div class="proof-shot reveal"><span data-i18n="proof1">Paiement Creator Rewards</span></div>
+        <div class="proof-shot reveal"><span data-i18n="proof2">Message d'une marque</span></div>
+        <div class="proof-shot reveal"><span data-i18n="proof3">Notification badge</span></div>
+        <div class="proof-shot reveal"><span data-i18n="proof4">Dashboard Spotlight</span></div>
+      </div>
+    </div>
+  </section>
+
+<!-- COMPARISON -->
+  <section class="section dark">
+    <div class="wrap">
+      <div class="s-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;"><div class="kicker" style="justify-content:center;" data-i18n="compare_kicker">La vraie différence</div><h2 data-i18n="compare_h2">Seule, ou accompagnée.</h2></div>
+
+      <div class="compare-table reveal">
+        <div class="compare-row compare-head">
+          <div class="compare-cell compare-label"></div>
+          <div class="compare-cell" data-i18n="compare_col_solo">Seule</div>
+          <div class="compare-cell compare-us" data-i18n="compare_col_us">Avec SnapStar Agency</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell compare-label"><svg class="compare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg><span data-i18n="compare_row1">Risque de refus</span></div>
+          <div class="compare-cell compare-no" data-i18n="compare_row1_solo">Élevé, sans savoir pourquoi</div>
+          <div class="compare-cell compare-us"><span class="compare-check">✓</span><span data-i18n="compare_row1_us">Audit avant paiement</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell compare-label"><svg class="compare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span data-i18n="compare_row2">Délai</span></div>
+          <div class="compare-cell compare-no" data-i18n="compare_row2_solo">Incertain, parfois des mois</div>
+          <div class="compare-cell compare-us"><span class="compare-check">✓</span><span data-i18n="compare_row2_us">Jusqu'à 30 jours</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell compare-label"><svg class="compare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span data-i18n="compare_row3">Critères de validation</span></div>
+          <div class="compare-cell compare-no" data-i18n="compare_row3_solo">Inconnus</div>
+          <div class="compare-cell compare-us"><span class="compare-check">✓</span><span data-i18n="compare_row3_us">Analysés et expliqués</span></div>
+        </div>
+      </div>
+
+      <div class="compare-closing reveal">
+        <p data-i18n="compare_closing">Le choix est clair.</p>
+        <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_compare_cta">Faire le bon choix</button>
+      </div>
+    </div>
+  </section>
+
+<!-- SCARCITY -->
+  <section class="section dark">
+    <div class="wrap-narrow statement reveal">
+      <div class="kicker" style="color:var(--muted-dark); margin-bottom:16px;" data-i18n="scarcity_kicker">Pourquoi maintenant</div>
+      <h2 style="font-size:clamp(28px,5.5vw,52px);" data-i18n="scarcity_h2">On ne suit qu'un nombre limité de dossiers chaque mois, <span class="dim">pour vraiment accompagner chacune jusqu'au bout.</span></h2>
+      <p style="color:var(--muted-dark); font-size:16px; margin-top:22px; max-width:560px; margin-left:auto; margin-right:auto;" data-i18n="scarcity_p">Une fois ce nombre atteint, les nouvelles demandes passent en liste d'attente pour le mois suivant.</p>
+    </div>
+  </section>
+
+<!-- PRICING -->
+  <section class="section soft" id="offre">
+    <div class="wrap">
+      <div class="s-head reveal"><div class="kicker" data-i18n="pricing_kicker">L'offre</div><h2 data-i18n="pricing_h2">Un accompagnement complet.</h2></div>
+      <div class="price-card reveal">
+        <div class="plan" data-i18n="price_plan">Offre standard</div>
+        <div class="amount"><span dir="ltr">1 500$</span><span> USD</span></div>
+        <div class="split" data-i18n="price_split">50% à la signature · 50% à la validation</div>
+        <div style="display:inline-flex; align-items:center; gap:7px; background:var(--ink-soft); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:12.5px; font-weight:600; margin-bottom:22px;">
+          <span style="color:var(--green);">✓</span> <span data-i18n="price_badge">Audit gratuit avant paiement, sans risque</span>
+        </div>
+        <ul class="price-list">
+          <li data-i18n="price_item1">Audit gratuit de ton compte</li>
+          <li data-i18n="price_item2">Préparation & soumission du dossier</li>
+          <li data-i18n="price_item3">Accès accompagné à la monétisation</li>
+          <li data-i18n="price_item4">Suivi jusqu'à validation du badge</li>
+          <li data-i18n="price_item5">Support direct par WhatsApp</li>
+        </ul>
+        <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_start_audit">Démarrer mon dossier</button>
+        <p style="font-size:12.5px; color:var(--muted); margin-top:16px; line-height:1.5;" data-i18n="price_roi">Plus de 10 milliards de vidéos sont regardées chaque jour sur Snapchat. Sans badge vérifié, tu n'as accès à aucune part de ce marché publicitaire, quel que soit ton talent.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- GARANTIE -->
+  <section class="section dark">
+    <div class="wrap">
+      <div class="s-head reveal"><div class="kicker" data-i18n="guarantee_kicker">Notre garantie</div><h2 data-i18n="guarantee_h2">Zéro dossier soumis à l'aveugle.</h2><p data-i18n="guarantee_p">Ton compte est analysé avant que tu paies quoi que ce soit. Si tes chances sont réellement faibles, on te le dit honnêtement, et tu ne perds rien à essayer.</p></div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num" data-i18n="g_step1_label">Étape 1</div>
+          <h3 data-i18n="g1_h3">Juste après ton message</h3>
+          <p data-i18n="g1_p">Tu remplis l'audit gratuit, on te répond sur WhatsApp pour confirmer la réception.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num" data-i18n="g_step2_label">Étape 2</div>
+          <h3 data-i18n="g2_h3">Sous 24-48h</h3>
+          <p data-i18n="g2_p">Ton compte est analysé, on te dit honnêtement tes chances réelles.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num" data-i18n="g_step3_label">Étape 3</div>
+          <h3 data-i18n="g3_h3">Tu décides</h3>
+          <p data-i18n="g3_p">Si tes chances sont bonnes, tu choisis de continuer. Sinon, tu ne paies rien et tu sais où tu en es.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FAQ -->
+  <section id="faq">
+    <div class="wrap-narrow">
+      <div class="s-head reveal" style="text-align:left; margin-left:0;"><div class="kicker" data-i18n="faq_kicker">FAQ</div><h2 style="font-size:clamp(26px,4vw,42px);" data-i18n="faq_h2">Tes questions, nos réponses.</h2></div>
+      <details class="faq-item reveal" open><summary data-i18n="faq1_q">Combien de temps ça prend ?</summary><p data-i18n="faq1_a">Jusqu'à 30 jours entre la soumission et la validation, selon les délais de traitement de Snapchat. Chaque jour de retard est un jour de contenu publié sans monétisation possible. C'est pour ça qu'on démarre l'audit dès le premier message.</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq2_q">Et si mon dossier est refusé ?</summary><p data-i18n="faq2_a">C'est justement pour ça qu'on analyse ton compte avant de te faire payer quoi que ce soit. Le risque, on le prend avant toi, pas après.</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq3_q">Pourquoi une agence US ?</summary><p data-i18n="faq3_a">SnapStar Agency opère depuis les États-Unis et a construit, au fil des années, une vraie expertise du process de vérification Snapchat et un réseau de contacts dans l'industrie. On a déjà accompagné des milliers de créateurs, artistes et marques dans le monde, et on sait précisément ce que chaque étape attend.</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq4_q">Comment marche le paiement en 2 fois ?</summary><p data-i18n="faq4_a">50% à la signature pour démarrer ton dossier, 50% uniquement une fois le badge validé. Tu ne paies jamais pour un résultat que tu n'as pas encore.</p></details>
+    </div>
+  </section>
+
+<!-- FINAL CTA -->
+  <section class="section dark final">
+    <div class="wrap-narrow reveal">
+      <div class="kicker" style="color:var(--muted-dark);" data-i18n="finalcta_kicker">Le prochain badge validé, ce sera peut-être le tien.</div>
+      <h2 style="margin-top:14px;" data-i18n="finalcta_h2">Chaque jour d'attente est un jour que tu ne récupères pas.</h2>
+      <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_reserve_audit_now">C'est le moment</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:14px;"><svg viewBox="0 0 24 24" style="width:16px;height:16px;"><circle cx="12" cy="12" r="11" fill="#FFFC00"/><path d="M12 5.5l1.7 4.3 4.6.4-3.5 3 1.1 4.5-3.9-2.5-3.9 2.5 1.1-4.5-3.5-3 4.6-.4z" fill="#000"/></svg>SnapStar Agency</div>
+    <p data-i18n="footer_copy" style="margin-top:14px;">© 2026 SnapStar Agency. Agence basée aux États-Unis.</p>
+    <div class="footer-links">
+      <button type="button" class="footer-link-btn" data-legal="privacy" data-i18n="footer_privacy">Politique de confidentialité</button>
+      <span class="footer-sep">|</span>
+      <button type="button" class="footer-link-btn" data-legal="terms" data-i18n="footer_terms">Conditions d'utilisation</button>
+    </div>
+
+    <div class="legal-panel" id="legalPrivacy" hidden>
+      <p data-i18n="legal_privacy_text">Les informations transmises via le formulaire d'audit gratuit (prénom, nom d'utilisateur Snapchat, pays, nombre d'abonnés, numéro WhatsApp, email) sont utilisées uniquement pour préparer ton audit et te sont envoyées directement via WhatsApp. Aucune donnée n'est stockée sur un serveur ou une base de données par ce site. SnapStar Agency ne vend ni ne partage ces informations avec des tiers.</p>
+    </div>
+    <div class="legal-panel" id="legalTerms" hidden>
+      <p data-i18n="legal_terms_text">SnapStar Agency est une agence indépendante offrant un service d'accompagnement à la certification Snapchat et à l'accès à la monétisation, non affiliée officiellement à Snap Inc. Les délais et résultats de certification dépendent des critères et décisions de Snapchat, hors du contrôle direct de l'agence. Le paiement s'effectue en deux temps&nbsp;: 50% à la signature, 50% à la validation du badge.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/message/LTKIH6UACS7VO1" target="_blank" rel="noopener" class="fab" aria-label="Écrire sur WhatsApp" data-i18n-aria="fab_aria">
+  <svg viewBox="0 0 24 24" fill="#000"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.19-1.77 1.24-.45.05-1.03.07-1.66-.1-.38-.11-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.43-1.08-2.73 0-1.3.68-1.94.93-2.2.24-.26.53-.32.7-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.44-.13.16-.28.35-.4.47-.13.13-.27.28-.11.55.15.26.68 1.12 1.46 1.82 1 .89 1.85 1.16 2.11 1.29.26.13.42.11.57-.07.16-.18.66-.77.84-1.03.18-.26.35-.22.6-.13.24.09 1.54.73 1.8.86.27.13.44.2.51.31.07.11.07.65-.15 1.27z"/></svg>
+</a>
+
+<!-- MESSAGE DE SORTIE -->
+<div class="exit-toast" id="exitToast" hidden>
+  <button class="exit-toast-close" id="exitToastClose" aria-label="Fermer">✕</button>
+  <p data-i18n="exit_toast_text">Avant de partir, réserve ton audit gratuit, ça prend 2 minutes.</p>
+  <button type="button" class="btn btn-primary js-open-modal" data-i18n="btn_exit_cta" style="margin-top:12px; width:100%;">Ne pas rater ça</button>
+</div>
+
+<!-- MODAL FORMULAIRE AUDIT GRATUIT -->
+<div class="modal-overlay" id="auditModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 data-i18n="modal_title">Réserve ton audit gratuit</h3>
+      <button class="modal-close" id="modalClose" aria-label="Fermer" data-i18n-aria="modal_close_aria">✕</button>
+    </div>
+    <p class="modal-sub" data-i18n="modal_sub">2 minutes. On te répond directement sur WhatsApp après.</p>
+
+    <form id="auditForm">
+      <div class="field">
+        <label for="f-name" data-i18n="modal_name_label">Ton prénom</label>
+        <input id="f-name" name="name" type="text" required autocomplete="given-name" placeholder="Ex. Yara" data-i18n-ph="modal_name_ph">
+      </div>
+
+      <div class="field">
+        <label for="f-snap" data-i18n="modal_snap_label">Nom d'utilisateur Snapchat</label>
+        <input id="f-snap" name="snap" type="text" dir="ltr" required autocapitalize="off" autocorrect="off" placeholder="@tonpseudo" data-i18n-ph="modal_snap_ph">
+      </div>
+
+      <div class="field-row two">
+        <div class="field">
+          <label for="f-country" data-i18n="modal_country_label">Pays</label>
+          <select id="f-country" name="country" required>
+            <option value="" data-i18n="modal_select_placeholder">Sélectionner</option>
+            <option value="Jordanie" data-i18n="opt_country_jo">Jordanie</option>
+            <option value="Émirats Arabes Unis" data-i18n="opt_country_ae">Émirats Arabes Unis</option>
+            <option value="Arabie Saoudite" data-i18n="opt_country_sa">Arabie Saoudite</option>
+            <option value="Qatar" data-i18n="opt_country_qa">Qatar</option>
+            <option value="Koweït" data-i18n="opt_country_kw">Koweït</option>
+            <option value="Bahreïn" data-i18n="opt_country_bh">Bahreïn</option>
+            <option value="Oman" data-i18n="opt_country_om">Oman</option>
+            <option value="Liban" data-i18n="opt_country_lb">Liban</option>
+            <option value="Irak" data-i18n="opt_country_iq">Irak</option>
+            <option value="Palestine" data-i18n="opt_country_ps">Palestine</option>
+            <option value="Maroc" data-i18n="opt_country_ma">Maroc</option>
+            <option value="Tunisie" data-i18n="opt_country_tn">Tunisie</option>
+            <option value="Algérie" data-i18n="opt_country_dz">Algérie</option>
+            <option value="Égypte" data-i18n="opt_country_eg">Égypte</option>
+            <option value="Libye" data-i18n="opt_country_ly">Libye</option>
+            <option value="Sénégal" data-i18n="opt_country_sn">Sénégal</option>
+            <option value="Côte d'Ivoire" data-i18n="opt_country_ci">Côte d'Ivoire</option>
+            <option value="Cameroun" data-i18n="opt_country_cm">Cameroun</option>
+            <option value="France" data-i18n="opt_country_fr">France</option>
+            <option value="Belgique" data-i18n="opt_country_be">Belgique</option>
+            <option value="Canada" data-i18n="opt_country_can">Canada</option>
+            <option value="Autre" data-i18n="opt_country_other">Autre</option>
+          </select>
+          <input id="f-country-other" name="country_other" type="text" placeholder="Précise ton pays" data-i18n-ph="modal_country_other_ph" style="margin-top:10px; display:none;">
+        </div>
+        <div class="field">
+          <label for="f-followers" data-i18n="modal_followers_label">Abonnés Snapchat</label>
+          <select id="f-followers" name="followers" required>
+            <option value="" data-i18n="modal_select_placeholder">Sélectionner</option>
+            <option value="u1k" data-i18n="opt_f_u1k">Moins de 1 000</option>
+            <option value="1k10k" data-i18n="opt_f_1k10k">1 000 – 10 000</option>
+            <option value="10k50k" data-i18n="opt_f_10k50k">10 000 – 50 000</option>
+            <option value="50k200k" data-i18n="opt_f_50k200k">50 000 – 200 000</option>
+            <option value="200kplus" data-i18n="opt_f_200kplus">Plus de 200 000</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-whatsapp" data-i18n="modal_whatsapp_label">Numéro WhatsApp (avec indicatif)</label>
+        <input id="f-whatsapp" name="whatsapp" type="tel" dir="ltr" required autocomplete="tel" inputmode="tel" placeholder="+962 7X XXX XXXX">
+      </div>
+
+      <div class="field">
+        <label for="f-email"><span data-i18n="modal_email_label">Email</span> <span class="opt" data-i18n="modal_email_opt">(optionnel)</span></label>
+        <input id="f-email" name="email" type="email" dir="ltr" autocomplete="email" inputmode="email" placeholder="ton@email.com" data-i18n-ph="modal_email_ph">
+      </div>
+
+      <div class="field">
+        <label for="f-tried" data-i18n="modal_tried_label">As-tu déjà essayé de te certifier seule ?</label>
+        <select id="f-tried" name="tried">
+          <option value="" data-i18n="modal_select_placeholder">Sélectionner</option>
+          <option value="Oui, une ou plusieurs fois, refusée" data-i18n="modal_tried_opt1">Oui, une ou plusieurs fois, refusée</option>
+          <option value="Non, jamais essayé" data-i18n="modal_tried_opt2">Non, jamais essayé</option>
+        </select>
+      </div>
+
+      <p class="form-note" data-i18n="modal_note">Tes informations servent uniquement à préparer ton audit gratuit et te sont envoyées directement sur WhatsApp. Aucune donnée n'est conservée ailleurs.</p>
+
+      <button type="submit" id="submitBtn" class="btn btn-primary" data-i18n="modal_submit">Envoyer et continuer sur WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---- MESSAGE DE SORTIE (une seule fois, non bloquant) ----
+  let exitIntentShown = false;
+  const exitToast = document.getElementById('exitToast');
+  const exitToastClose = document.getElementById('exitToastClose');
+
+  document.addEventListener('mouseout', (e) => {
+    if (exitIntentShown || prefersReducedMotion) return;
+    if (e.clientY > 10) return;
+    if (e.relatedTarget) return;
+    if (modal.classList.contains('open')) return;
+    exitIntentShown = true;
+    exitToast.hidden = false;
+    requestAnimationFrame(() => exitToast.classList.add('show'));
+  });
+
+  exitToastClose.addEventListener('click', () => {
+    exitToast.classList.remove('show');
+  });
+
+  // ---- PANNEAUX LEGAUX (footer) ----
+  document.querySelectorAll('.footer-link-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.legal === 'privacy' ? 'legalPrivacy' : 'legalTerms';
+      const panel = document.getElementById(targetId);
+      const otherId = targetId === 'legalPrivacy' ? 'legalTerms' : 'legalPrivacy';
+      document.getElementById(otherId).hidden = true;
+      panel.hidden = !panel.hidden;
+    });
+  });
+
+  // ---- TILT 3D DE L'ORBE (souris desktop) ----
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const badgeOrb = document.getElementById('badgeOrb');
+  const hasHover = window.matchMedia('(hover:hover)').matches;
+
+  if (badgeOrb && !prefersReducedMotion && hasHover) {
+    document.addEventListener('mousemove', (e) => {
+      const rect = badgeOrb.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (window.innerWidth / 2);
+      const dy = (e.clientY - cy) / (window.innerHeight / 2);
+      badgeOrb.style.transform = `rotateX(${(dy * -8).toFixed(2)}deg) rotateY(${(dx * 8).toFixed(2)}deg)`;
+    });
+  }
+
+  // ---- TILT AU TOUCHER (mobile, prend le relais de l'oscillation auto) ----
+  if (badgeOrb && !prefersReducedMotion && !hasHover) {
+    badgeOrb.addEventListener('touchstart', () => {
+      badgeOrb.style.animationPlayState = 'paused';
+    }, { passive: true });
+
+    badgeOrb.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const rect = badgeOrb.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (touch.clientX - cx) / (rect.width / 2);
+      const dy = (touch.clientY - cy) / (rect.height / 2);
+      badgeOrb.style.transform = `rotateX(${(dy * -10).toFixed(2)}deg) rotateY(${(dx * 10).toFixed(2)}deg)`;
+    }, { passive: true });
+
+    badgeOrb.addEventListener('touchend', () => {
+      badgeOrb.style.transform = '';
+      badgeOrb.style.animationPlayState = 'running';
+    });
+  }
+
+  // ---- GLOW PROGRESSIF QUAND LE BADGE SORT DE L'ECRAN ----
+  const badgeHero = document.querySelector('.badge-hero');
+  const badgeGlow = document.getElementById('badgeGlow');
+  if (badgeHero && badgeGlow && !prefersReducedMotion) {
+    const glowThresholds = Array.from({length: 21}, (_, i) => i / 20);
+    const glowIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { badgeGlow.style.opacity = (1 - entry.intersectionRatio).toFixed(2); });
+    }, { threshold: glowThresholds });
+    glowIO.observe(badgeHero);
+  }
+
+  // ---- COMPTEUR ANIME ----
+  const statEl = document.getElementById('statNumber');
+  if (statEl) {
+    const target = parseInt(statEl.dataset.target, 10);
+    const statIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          statIO.unobserve(entry.target);
+          const duration = 1400;
+          const start = performance.now();
+          function tick(now){
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(eased * target);
+            statEl.textContent = '+' + value.toLocaleString('fr-FR');
+            if (progress < 1) requestAnimationFrame(tick);
+            else statEl.textContent = '+' + target.toLocaleString('fr-FR');
+          }
+          requestAnimationFrame(tick);
+        }
+      });
+    }, { threshold:0.4 });
+    statIO.observe(statEl);
+  }
+
+  // ---- MODAL AUDIT GRATUIT ----
+  const modal = document.getElementById('auditModal');
+  const openModal = () => {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (typeof quizAnswers !== 'undefined' && quizAnswers.followers) {
+      const followersField = document.getElementById('f-followers');
+      if (followersField) followersField.value = quizAnswers.followers;
+    }
+  };
+  const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
+
+  document.querySelectorAll('.js-open-modal').forEach(btn => btn.addEventListener('click', openModal));
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+
+  // ---- QUIZ ELIGIBILITE ----
+  const quizAnswers = {};
+  const quizCard = document.querySelector('.quiz-card');
+  if (quizCard) {
+    const stepsQ = quizCard.querySelectorAll('.quiz-step');
+    const dots = quizCard.querySelectorAll('.quiz-progress .dot');
+    const resultPanel = quizCard.querySelector('.quiz-result');
+
+    quizCard.querySelectorAll('.quiz-options button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.dataset.q;
+        const v = btn.dataset.value;
+        quizAnswers[q] = v;
+
+        const currentStep = btn.closest('.quiz-step');
+        const stepIndex = Array.from(stepsQ).indexOf(currentStep);
+        dots[stepIndex].classList.add('done');
+        dots[stepIndex].classList.remove('active');
+
+        if (stepIndex + 1 < stepsQ.length) {
+          currentStep.hidden = true;
+          stepsQ[stepIndex + 1].hidden = false;
+          dots[stepIndex + 1].classList.add('active');
+        } else {
+          currentStep.hidden = true;
+          showQuizResult();
+        }
+      });
+    });
+
+    function showQuizResult(){
+      const followers = quizAnswers.followers || '';
+      const title = resultPanel.querySelector('.quiz-result-title');
+      const text = resultPanel.querySelector('.quiz-result-text');
+      const dict = translations[currentLang];
+
+      if (followers === '50k200k') {
+        title.textContent = dict.quiz_result_big_title;
+        text.textContent = dict.quiz_result_big_text;
+      } else {
+        title.textContent = dict.quiz_result_small_title;
+        text.textContent = dict.quiz_result_small_text;
+      }
+      resultPanel.hidden = false;
+    }
+  }
+
+  // ---- CHAMP PAYS PERSONNALISE ----
+  const countrySelect = document.getElementById('f-country');
+  const countryOtherInput = document.getElementById('f-country-other');
+  countrySelect.addEventListener('change', () => {
+    const isOther = countrySelect.value === 'Autre';
+    countryOtherInput.style.display = isOther ? 'block' : 'none';
+    countryOtherInput.required = isOther;
+    if (!isOther) countryOtherInput.value = '';
+  });
+
+  // ---- ENVOI FORMULAIRE (labels toujours en FR pour l'agence) ----
+  const followersFR = {
+    u1k: 'Moins de 1 000', '1k10k': '1 000 – 10 000', '10k50k': '10 000 – 50 000',
+    '50k200k': '50 000 – 200 000', '200kplus': 'Plus de 200 000'
+  };
+
+  document.getElementById('auditForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(this);
+    const countryValue = (data.get('country') === 'Autre' && data.get('country_other'))
+      ? data.get('country_other') : (data.get('country') || '-');
+    const lines = [
+      'Bonjour SnapStar Agency, je souhaite réserver mon audit gratuit :',
+      '',
+      'Prénom : ' + (data.get('name') || '-'),
+      'Snapchat : ' + (data.get('snap') || '-'),
+      'Pays : ' + countryValue,
+      'Abonnés : ' + (followersFR[data.get('followers')] || data.get('followers') || '-'),
+      'WhatsApp : ' + (data.get('whatsapp') || '-'),
+      'Email : ' + (data.get('email') || '-'),
+      'Déjà essayé seule : ' + (data.get('tried') || '-')
+    ];
+    const message = encodeURIComponent(lines.join('\n'));
+    const submitBtn = document.getElementById('submitBtn');
+    const originalHTML = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="check-pop">✓</span>';
+    submitBtn.disabled = true;
+    setTimeout(() => {
+      window.open('https://wa.me/message/LTKIH6UACS7VO1?text=' + message, '_blank');
+      closeModal();
+      submitBtn.innerHTML = originalHTML;
+      submitBtn.disabled = false;
+    }, 550);
+  });
+
+  // ==================================================================
+  // ---- SYSTEME DE TRADUCTION FR / EN / AR ----
+  // ==================================================================
+  const translations = {
+    fr: {
+      nav_process:"Le process", nav_results:"Résultats", nav_offer:"L'offre", nav_faq:"FAQ",
+      hero_kicker:"+5 000 créateurs & marques accompagnés",
+      hero_h1:"Pendant que tu hésites,<br>d'autres sont<br>déjà payées.",
+      hero_lead:"Le badge Snapchat n'est pas une formalité. C'est ta porte vers de vrais revenus, des collaborations avec de vraies marques, et la reconnaissance que tu mérites.",
+      hero_link:"Voir comment ça marche",
+      btn_reserve_audit:"Réserver mon audit gratuit", btn_start_audit:"Démarrer mon dossier", btn_reserve_audit_now:"C'est le moment",
+      btn_quiz_cta:"Réserver mon créneau", btn_steps_cta:"Commencer maintenant", btn_compare_cta:"Faire le bon choix", btn_exit_cta:"Ne pas rater ça",
+      statement_h2:'Chaque semaine sans badge, c\'est une semaine de contenu publié <span class="dim">gratuitement</span>, pendant que d\'autres sont déjà <span class="dim">payées pour le même travail.</span>',
+      quiz_kicker:"Vérifie en 30 secondes", quiz_h2:"Es-tu éligible ?",
+      quiz_q1:"Combien d'abonnés as-tu sur Snapchat ?",
+      opt_f_u1k:"Moins de 1 000", opt_f_1k10k:"1 000 – 10 000", opt_f_10k50k:"10 000 – 50 000", opt_f_50kplus:"50 000 et plus",
+      quiz_q2:"À quelle fréquence postes-tu du contenu ?",
+      opt_freq_daily:"Tous les jours", opt_freq_weekly:"Plusieurs fois par semaine", opt_freq_rare:"Rarement",
+      quiz_q3:"As-tu déjà essayé de te faire vérifier seule ?",
+      opt_tried_yes:"Oui, et j'ai été refusée", opt_tried_no:"Non, jamais essayé",
+      quiz_result_big_title:"Tu remplis déjà les critères clés.",
+      quiz_result_big_text:"Avec ton nombre d'abonnés, tu es dans la fourchette qui permet un accès complet à la monétisation Snapchat une fois certifiée. On peut avancer rapidement.",
+      quiz_result_small_title:"Le badge reste à ta portée.",
+      quiz_result_small_text:"Le badge de vérification n'exige pas un nombre précis d'abonnés. Snapchat fixe cependant un seuil de 50 000 abonnés pour l'accès complet à la monétisation : en dessous, on t'accompagne aussi pour grandir jusqu'à ce seuil une fois certifiée.",
+      authority_kicker:"Notre expertise",
+      authority_text:"créateurs, artistes, personnalités publiques et marques déjà accompagnés dans leur vérification, partout dans le monde.",
+      features_kicker:"Ce qui change", features_h2:"Le vrai obstacle,<br>résolu.",
+      feat1_before:"Refusée sans explication", feat1_h3:"Audit gratuit avant tout", feat1_p:"On analyse ton compte et on identifie exactement ce qui bloque, en 48h.",
+      feat2_before:"Le badge semble décoratif", feat2_h3:"Accès réel à la monétisation", feat2_p:'Spotlight, Creator Rewards&nbsp;: le badge est la clé, pas la finalité.',
+      feat3_before:"Peur que ce soit une arnaque", feat3_h3:"On paie une fois vue ta chance", feat3_p:"Ton compte est évalué avant tout paiement. Transparence totale.",
+      feat4_before:"Les marques t'ignorent", feat4_h3:"Le badge ouvre les portes", feat4_p:"La vérification change la façon dont les marques te perçoivent, que tu sois créatrice, artiste, ou une entreprise.",
+      steps_kicker:"Le process, en détail", steps_h2:"Trois étapes.<br>Zéro risque de ton côté.",
+      step1_h3:"Audit gratuit", step1_p:"On analyse ton compte et on te dit honnêtement tes chances.", step1_time:"⏱ 24-48h", step1_risk:"Aucun engagement. Si tes chances sont faibles, on te le dit et tu ne paies rien.",
+      step2_h3:"Soumission du dossier", step2_p:"On prépare et soumet ton dossier avec les bons éléments, ceux que Snapchat attend vraiment.", step2_time:"⏱ Jusqu'à 30 jours", step2_risk:"50% du paiement seulement à cette étape. Le reste, une fois le badge validé.",
+      step3_h3:"Badge & accès débloqué", step3_p:"Certification obtenue, monétisation débloquée : Spotlight, Creator Rewards, collaborations.", step3_time:"✓ Suivi jusqu'au bout", step3_risk:"On reste disponible après validation pour t'aider à démarrer la monétisation.",
+      midproof_tag:"Ce process, en pratique", midproof_quote:'"Refusée 3 fois seule, certifiée en une semaine avec eux."', midproof_caption:"Résultat obtenu en suivant exactement les 3 étapes ci-dessus.",
+      stepscta_p:"Il reste des places disponibles ce mois-ci. L'audit prend 2 minutes et ne coûte rien.",
+      testimonials_kicker:"Résultats", testimonials_h2:"Dans leurs mots.",
+      t1_result:"1 semaine", t1_fr:'"Refusée 3 fois seule, certifiée en une semaine."',
+      t2_result:"1er paiement", t2_fr:'"Premier mois, premier vrai paiement."',
+      t3_result:"2 semaines", t3_fr:'"Une marque m\'a contactée 2 semaines après."',
+      t4_result:"Transparence", t4_fr:'"Ils ont regardé mon compte avant que je paie."',
+      t_name:"Prénom, ville",
+      proof_kicker:"Preuve brute", proof_h2:"Pas de mise en scène.", proof_p:"Directement tirées de vraies conversations avec nos clientes, capture par capture.",
+      proof1:"Paiement Creator Rewards", proof2:"Message d'une marque", proof3:"Notification badge", proof4:"Dashboard Spotlight",
+      compare_kicker:"La vraie différence", compare_h2:"Seule, ou accompagnée.",
+      compare_col_solo:"Seule", compare_col_us:"Avec SnapStar Agency",
+      compare_row1:"Risque de refus", compare_row1_solo:"Élevé, sans savoir pourquoi", compare_row1_us:"Audit avant paiement",
+      compare_row2:"Délai", compare_row2_solo:"Incertain, parfois des mois", compare_row2_us:"Jusqu'à 30 jours",
+      compare_row3:"Critères de validation", compare_row3_solo:"Inconnus", compare_row3_us:"Analysés et expliqués",
+      compare_closing:"Le choix est clair.",
+      scarcity_kicker:"Pourquoi maintenant",
+      scarcity_h2:'On ne suit qu\'un nombre limité de dossiers chaque mois, <span class="dim">pour vraiment accompagner chacune jusqu\'au bout.</span>',
+      scarcity_p:"Une fois ce nombre atteint, les nouvelles demandes passent en liste d'attente pour le mois suivant.",
+      pricing_kicker:"L'offre", pricing_h2:"Un accompagnement complet.",
+      price_plan:"Offre standard", price_split:"50% à la signature · 50% à la validation", price_badge:"Audit gratuit avant paiement, sans risque",
+      price_item1:"Audit gratuit de ton compte", price_item2:"Préparation & soumission du dossier", price_item3:"Accès accompagné à la monétisation",
+      price_item4:"Suivi jusqu'à validation du badge", price_item5:"Support direct par WhatsApp",
+      price_roi:"Plus de 10 milliards de vidéos sont regardées chaque jour sur Snapchat. Sans badge vérifié, tu n'as accès à aucune part de ce marché publicitaire, quel que soit ton talent.",
+      guarantee_kicker:"Notre garantie", guarantee_h2:"Zéro dossier soumis à l'aveugle.",
+      guarantee_p:"Ton compte est analysé avant que tu paies quoi que ce soit. Si tes chances sont réellement faibles, on te le dit honnêtement, et tu ne perds rien à essayer.",
+      g_step1_label:"Étape 1", g1_h3:"Juste après ton message", g1_p:"Tu remplis l'audit gratuit, on te répond sur WhatsApp pour confirmer la réception.",
+      g_step2_label:"Étape 2", g2_h3:"Sous 24-48h", g2_p:"Ton compte est analysé, on te dit honnêtement tes chances réelles.",
+      g_step3_label:"Étape 3", g3_h3:"Tu décides", g3_p:"Si tes chances sont bonnes, tu choisis de continuer. Sinon, tu ne paies rien et tu sais où tu en es.",
+      faq_kicker:"FAQ", faq_h2:"Tes questions, nos réponses.",
+      faq1_q:"Combien de temps ça prend ?", faq1_a:"Jusqu'à 30 jours entre la soumission et la validation, selon les délais de traitement de Snapchat. Chaque jour de retard est un jour de contenu publié sans monétisation possible. C'est pour ça qu'on démarre l'audit dès le premier message.",
+      faq2_q:"Et si mon dossier est refusé ?", faq2_a:"C'est justement pour ça qu'on analyse ton compte avant de te faire payer quoi que ce soit. Le risque, on le prend avant toi, pas après.",
+      faq3_q:"Pourquoi une agence US ?", faq3_a:"SnapStar Agency opère depuis les États-Unis et a construit, au fil des années, une vraie expertise du process de vérification Snapchat et un réseau de contacts dans l'industrie. On a déjà accompagné des milliers de créateurs, artistes et marques dans le monde, et on sait précisément ce que chaque étape attend.",
+      faq4_q:"Comment marche le paiement en 2 fois ?", faq4_a:"50% à la signature pour démarrer ton dossier, 50% uniquement une fois le badge validé. Tu ne paies jamais pour un résultat que tu n'as pas encore.",
+      finalcta_kicker:"Le prochain badge validé, ce sera peut-être le tien.", finalcta_h2:"Chaque jour d'attente est un jour que tu ne récupères pas.",
+      footer_copy:"© 2026 SnapStar Agency. Agence basée aux États-Unis.",
+      footer_privacy:"Politique de confidentialité", footer_terms:"Conditions d'utilisation",
+      exit_toast_text:"Avant de partir, réserve ton audit gratuit, ça prend 2 minutes.",
+      legal_privacy_text:"Les informations transmises via le formulaire d'audit gratuit (prénom, nom d'utilisateur Snapchat, pays, nombre d'abonnés, numéro WhatsApp, email) sont utilisées uniquement pour préparer ton audit et te sont envoyées directement via WhatsApp. Aucune donnée n'est stockée sur un serveur ou une base de données par ce site. SnapStar Agency ne vend ni ne partage ces informations avec des tiers.",
+      legal_terms_text:"SnapStar Agency est une agence indépendante offrant un service d'accompagnement à la certification Snapchat et à l'accès à la monétisation, non affiliée officiellement à Snap Inc. Les délais et résultats de certification dépendent des critères et décisions de Snapchat, hors du contrôle direct de l'agence. Le paiement s'effectue en deux temps&nbsp;: 50% à la signature, 50% à la validation du badge.",
+      fab_aria:"Écrire sur WhatsApp",
+      modal_title:"Réserve ton audit gratuit", modal_close_aria:"Fermer", modal_sub:"2 minutes. On te répond directement sur WhatsApp après.",
+      modal_name_label:"Ton prénom", modal_name_ph:"Ex. Yara",
+      modal_snap_label:"Nom d'utilisateur Snapchat", modal_snap_ph:"@tonpseudo",
+      modal_country_label:"Pays", modal_followers_label:"Abonnés Snapchat",
+      modal_whatsapp_label:"Numéro WhatsApp (avec indicatif)",
+      modal_email_label:"Email", modal_email_opt:"(optionnel)", modal_email_ph:"ton@email.com",
+      modal_tried_label:"As-tu déjà essayé de te certifier seule ?",
+      modal_select_placeholder:"Sélectionner",
+      opt_country_jo:"Jordanie", opt_country_ae:"Émirats Arabes Unis", opt_country_sa:"Arabie Saoudite", opt_country_ma:"Maroc",
+      opt_country_tn:"Tunisie", opt_country_dz:"Algérie", opt_country_eg:"Égypte", opt_country_fr:"France", opt_country_qa:"Qatar", opt_country_kw:"Koweït",
+      opt_country_bh:"Bahreïn", opt_country_om:"Oman", opt_country_lb:"Liban", opt_country_iq:"Irak", opt_country_ps:"Palestine", opt_country_ly:"Libye",
+      opt_country_sn:"Sénégal", opt_country_ci:"Côte d'Ivoire", opt_country_cm:"Cameroun", opt_country_be:"Belgique", opt_country_can:"Canada", opt_country_other:"Autre",
+      modal_country_other_ph:"Précise ton pays",
+      opt_f_50k200k:"50 000 – 200 000", opt_f_200kplus:"Plus de 200 000",
+      modal_tried_opt1:"Oui, une ou plusieurs fois, refusée", modal_tried_opt2:"Non, jamais essayé",
+      modal_note:"Tes informations servent uniquement à préparer ton audit gratuit et te sont envoyées directement sur WhatsApp. Aucune donnée n'est conservée ailleurs.",
+      modal_submit:"Envoyer et continuer sur WhatsApp"
+    },
+    en: {
+      nav_process:"How it works", nav_results:"Results", nav_offer:"The offer", nav_faq:"FAQ",
+      hero_kicker:"+5,000 creators & brands supported",
+      hero_h1:"While you're hesitating,<br>others are already<br>getting paid.",
+      hero_lead:"The Snapchat badge isn't a formality. It's your door to real income, real brand deals, and the recognition you deserve.",
+      hero_link:"See how it works",
+      btn_reserve_audit:"Book my free audit", btn_start_audit:"Start my file", btn_reserve_audit_now:"This is the moment",
+      btn_quiz_cta:"Reserve my spot", btn_steps_cta:"Start now", btn_compare_cta:"Make the right choice", btn_exit_cta:"Don't miss this",
+      statement_h2:'Every week without the badge is a week of content posted <span class="dim">for free</span>, while others are already <span class="dim">getting paid for the same work.</span>',
+      quiz_kicker:"Check in 30 seconds", quiz_h2:"Are you eligible?",
+      quiz_q1:"How many followers do you have on Snapchat?",
+      opt_f_u1k:"Under 1,000", opt_f_1k10k:"1,000 – 10,000", opt_f_10k50k:"10,000 – 50,000", opt_f_50kplus:"50,000 and above",
+      quiz_q2:"How often do you post content?",
+      opt_freq_daily:"Every day", opt_freq_weekly:"Several times a week", opt_freq_rare:"Rarely",
+      quiz_q3:"Have you already tried to get verified on your own?",
+      opt_tried_yes:"Yes, and I was rejected", opt_tried_no:"No, never tried",
+      quiz_result_big_title:"You already meet the key criteria.",
+      quiz_result_big_text:"With your follower count, you're in the range that unlocks full access to Snapchat monetization once certified. We can move quickly.",
+      quiz_result_small_title:"The badge is still within reach.",
+      quiz_result_small_text:"The verification badge doesn't require a set number of followers. Snapchat does set a 50,000-follower threshold for full monetization access though: below that, we also help you grow toward it once certified.",
+      authority_kicker:"Our expertise",
+      authority_text:"creators, artists, public figures and brands already guided through verification, all around the world.",
+      features_kicker:"What changes", features_h2:"The real obstacle,<br>solved.",
+      feat1_before:"Rejected with no explanation", feat1_h3:"Free audit first", feat1_p:"We analyze your account and pinpoint exactly what's blocking you, within 48h.",
+      feat2_before:"The badge feels decorative", feat2_h3:"Real access to monetization", feat2_p:'Spotlight, Creator Rewards&nbsp;: the badge is the key, not the end goal.',
+      feat3_before:"Afraid it's a scam", feat3_h3:"You pay once we've seen your odds", feat3_p:"Your account is evaluated before any payment. Full transparency.",
+      feat4_before:"Brands ignore you", feat4_h3:"The badge opens doors", feat4_p:"Verification changes how brands see you, whether you're a creator, an artist, or a business.",
+      steps_kicker:"The process, in detail", steps_h2:"Three steps.<br>Zero risk on your end.",
+      step1_h3:"Free audit", step1_p:"We analyze your account and give you an honest read on your odds.", step1_time:"⏱ 24-48h", step1_risk:"No commitment. If your odds are low, we'll tell you, and you pay nothing.",
+      step2_h3:"Submitting your file", step2_p:"We prepare and submit your file with the right elements, exactly what Snapchat is actually looking for.", step2_time:"⏱ Up to 30 days", step2_risk:"Only 50% of the payment at this stage. The rest once the badge is validated.",
+      step3_h3:"Badge & access unlocked", step3_p:"Certification achieved, monetization unlocked: Spotlight, Creator Rewards, brand deals.", step3_time:"✓ Support all the way through", step3_risk:"We stay available after validation to help you get monetization started.",
+      midproof_tag:"This process, in practice", midproof_quote:'"Rejected 3 times on my own, certified within a week with them."', midproof_caption:"Result achieved by following exactly the 3 steps above.",
+      stepscta_p:"There are still spots open this month. The audit takes 2 minutes and costs nothing.",
+      testimonials_kicker:"Results", testimonials_h2:"In their words.",
+      t1_result:"1 week", t1_fr:'"Rejected 3 times alone, certified in one week."',
+      t2_result:"1st payment", t2_fr:'"First month, first real payment."',
+      t3_result:"2 weeks", t3_fr:'"A brand reached out to me 2 weeks later."',
+      t4_result:"Transparency", t4_fr:'"They checked my account before I paid anything."',
+      t_name:"First name, city",
+      proof_kicker:"Raw proof", proof_h2:"No staging.", proof_p:"Taken directly from real conversations with our clients, screenshot by screenshot.",
+      proof1:"Creator Rewards payment", proof2:"Message from a brand", proof3:"Badge notification", proof4:"Spotlight dashboard",
+      compare_kicker:"The real difference", compare_h2:"Alone, or supported.",
+      compare_col_solo:"Alone", compare_col_us:"With SnapStar Agency",
+      compare_row1:"Risk of rejection", compare_row1_solo:"High, without knowing why", compare_row1_us:"Audit before payment",
+      compare_row2:"Timeline", compare_row2_solo:"Uncertain, sometimes months", compare_row2_us:"Up to 30 days",
+      compare_row3:"Validation criteria", compare_row3_solo:"Unknown", compare_row3_us:"Analyzed and explained",
+      compare_closing:"The choice is clear.",
+      scarcity_kicker:"Why now",
+      scarcity_h2:'We only take on a limited number of files each month, <span class="dim">to truly support each person all the way through.</span>',
+      scarcity_p:"Once that number is reached, new requests move to a waitlist for the following month.",
+      pricing_kicker:"The offer", pricing_h2:"Full support, start to finish.",
+      price_plan:"Standard offer", price_split:"50% upfront · 50% on validation", price_badge:"Free audit before payment, zero risk",
+      price_item1:"Free audit of your account", price_item2:"File preparation & submission", price_item3:"Guided access to monetization",
+      price_item4:"Support until badge validation", price_item5:"Direct support via WhatsApp",
+      price_roi:"Over 10 billion videos are watched every day on Snapchat. Without a verified badge, you have access to none of that ad market, no matter how talented you are.",
+      guarantee_kicker:"Our guarantee", guarantee_h2:"Zero files submitted blindly.",
+      guarantee_p:"Your account is analyzed before you pay anything. If your odds are genuinely low, we'll tell you honestly, and you lose nothing by trying.",
+      g_step1_label:"Step 1", g1_h3:"Right after your message", g1_p:"You fill out the free audit, we reply on WhatsApp to confirm we've received it.",
+      g_step2_label:"Step 2", g2_h3:"Within 24-48h", g2_p:"Your account gets analyzed, and we give you an honest read on your real odds.",
+      g_step3_label:"Step 3", g3_h3:"You decide", g3_p:"If your odds are good, you choose to move forward. If not, you pay nothing and know exactly where you stand.",
+      faq_kicker:"FAQ", faq_h2:"Your questions, our answers.",
+      faq1_q:"How long does it take?", faq1_a:"Up to 30 days between submission and validation, depending on Snapchat's processing times. Every day of delay is a day of content posted with no monetization possible. That's why we start the audit from your very first message.",
+      faq2_q:"What if my file gets rejected?", faq2_a:"That's exactly why we analyze your account before charging you anything. We take on the risk before you do, not after.",
+      faq3_q:"Why a US agency?", faq3_a:"SnapStar Agency operates from the United States and has built, over the years, real expertise in the Snapchat verification process along with a network of industry contacts. We've already supported thousands of creators, artists and brands worldwide, and we know precisely what each step requires.",
+      faq4_q:"How does the 2-part payment work?", faq4_a:"50% upfront to start your file, 50% only once the badge is validated. You never pay for a result you don't have yet.",
+      finalcta_kicker:"The next validated badge might just be yours.", finalcta_h2:"Every day you wait is a day you don't get back.",
+      footer_copy:"© 2026 SnapStar Agency. US-based agency.",
+      footer_privacy:"Privacy Policy", footer_terms:"Terms of Use",
+      exit_toast_text:"Before you go, book your free audit, it takes 2 minutes.",
+      legal_privacy_text:"Information submitted through the free audit form (first name, Snapchat username, country, follower count, WhatsApp number, email) is used only to prepare your audit and is sent directly to WhatsApp. No data is stored on any server or database by this site. SnapStar Agency does not sell or share this information with third parties.",
+      legal_terms_text:"SnapStar Agency is an independent agency offering support for Snapchat certification and monetization access, not officially affiliated with Snap Inc. Certification timelines and outcomes depend on Snapchat's own criteria and decisions, outside the agency's direct control. Payment is made in two parts&nbsp;: 50% upfront, 50% upon badge validation.",
+      fab_aria:"Message us on WhatsApp",
+      modal_title:"Book your free audit", modal_close_aria:"Close", modal_sub:"2 minutes. We'll reply directly on WhatsApp right after.",
+      modal_name_label:"Your first name", modal_name_ph:"E.g. Yara",
+      modal_snap_label:"Snapchat username", modal_snap_ph:"@yourhandle",
+      modal_country_label:"Country", modal_followers_label:"Snapchat followers",
+      modal_whatsapp_label:"WhatsApp number (with country code)",
+      modal_email_label:"Email", modal_email_opt:"(optional)", modal_email_ph:"you@email.com",
+      modal_tried_label:"Have you already tried to get certified on your own?",
+      modal_select_placeholder:"Select",
+      opt_country_jo:"Jordan", opt_country_ae:"United Arab Emirates", opt_country_sa:"Saudi Arabia", opt_country_ma:"Morocco",
+      opt_country_tn:"Tunisia", opt_country_dz:"Algeria", opt_country_eg:"Egypt", opt_country_fr:"France", opt_country_qa:"Qatar", opt_country_kw:"Kuwait",
+      opt_country_bh:"Bahrain", opt_country_om:"Oman", opt_country_lb:"Lebanon", opt_country_iq:"Iraq", opt_country_ps:"Palestine", opt_country_ly:"Libya",
+      opt_country_sn:"Senegal", opt_country_ci:"Ivory Coast", opt_country_cm:"Cameroon", opt_country_be:"Belgium", opt_country_can:"Canada", opt_country_other:"Other",
+      modal_country_other_ph:"Specify your country",
+      opt_f_50k200k:"50,000 – 200,000", opt_f_200kplus:"Over 200,000",
+      modal_tried_opt1:"Yes, once or more, and was rejected", modal_tried_opt2:"No, never tried",
+      modal_note:"Your information is only used to prepare your free audit and is sent directly to WhatsApp. No data is stored anywhere else.",
+      modal_submit:"Send and continue on WhatsApp"
+    },
+    ar: {
+      nav_process:"كيف تعمل", nav_results:"النتائج", nav_offer:"العرض", nav_faq:"الأسئلة الشائعة",
+      hero_kicker:"+5000 من المبدعين والعلامات التجارية المدعومين",
+      hero_h1:"بينما تترددين،<br>غيرك بدأت<br>تكسب فعلاً.",
+      hero_lead:"شارة سناب شات ليست مجرد إجراء شكلي. هي بابك إلى دخل حقيقي، وتعاون مع علامات تجارية حقيقية، والتقدير الذي تستحقينه.",
+      hero_link:"شاهدي كيف تعمل",
+      btn_reserve_audit:"احجزي تدقيقك المجاني", btn_start_audit:"ابدئي ملفك", btn_reserve_audit_now:"هذه هي اللحظة",
+      btn_quiz_cta:"احجزي موعدك", btn_steps_cta:"ابدئي الآن", btn_compare_cta:"اتخذي القرار الصحيح", btn_exit_cta:"لا تفوّتي هذا",
+      statement_h2:'كل أسبوع بدون الشارة هو أسبوع من المحتوى المنشور <span class="dim">مجاناً</span>، بينما غيرك تدفع لها <span class="dim">مقابل نفس العمل.</span>',
+      quiz_kicker:"تحققي في 30 ثانية", quiz_h2:"هل أنتِ مؤهلة؟",
+      quiz_q1:"كم عدد متابعينك على سناب شات؟",
+      opt_f_u1k:"أقل من 1000", opt_f_1k10k:"1000 – 10000", opt_f_10k50k:"10000 – 50000", opt_f_50kplus:"50000 وأكثر",
+      quiz_q2:"كم مرة تنشرين محتوى؟",
+      opt_freq_daily:"كل يوم", opt_freq_weekly:"عدة مرات في الأسبوع", opt_freq_rare:"نادراً",
+      quiz_q3:"هل حاولتِ التوثيق بمفردك من قبل؟",
+      opt_tried_yes:"نعم، وتم رفضي", opt_tried_no:"لا، لم أحاول أبداً",
+      quiz_result_big_title:"أنتِ بالفعل تستوفين المعايير الأساسية.",
+      quiz_result_big_text:"بعدد متابعينك، أنتِ ضمن الفئة التي تسمح بالوصول الكامل لتحقيق الدخل من سناب شات بعد التوثيق. يمكننا التقدم بسرعة.",
+      quiz_result_small_title:"الشارة لا تزال في متناول يدك.",
+      quiz_result_small_text:"شارة التوثيق لا تتطلب عدداً محدداً من المتابعين. لكن سناب شات يحدد عتبة 50000 متابع للوصول الكامل لتحقيق الدخل: إذا كان عدد متابعينك أقل، نساعدك أيضاً على النمو نحو هذه العتبة بعد التوثيق.",
+      authority_kicker:"خبرتنا",
+      authority_text:"من المبدعين والفنانين والشخصيات العامة والعلامات التجارية الذين تمت مساعدتهم في التوثيق حول العالم.",
+      features_kicker:"ما الذي يتغير", features_h2:"العقبة الحقيقية،<br>محلولة.",
+      feat1_before:"رُفضتِ بدون تفسير", feat1_h3:"تدقيق مجاني أولاً", feat1_p:"نحلل حسابك ونحدد بالضبط ما يعيقك، خلال 48 ساعة.",
+      feat2_before:"الشارة تبدو شكلية", feat2_h3:"وصول حقيقي لتحقيق الدخل", feat2_p:'Spotlight وCreator Rewards&nbsp;: الشارة هي المفتاح، لا الهدف النهائي.',
+      feat3_before:"خوف من أن يكون احتيالاً", feat3_h3:"تدفعين بعد معرفة حظوظك", feat3_p:"يتم تقييم حسابك قبل أي دفع. شفافية كاملة.",
+      feat4_before:"العلامات التجارية تتجاهلك", feat4_h3:"الشارة تفتح الأبواب", feat4_p:"التوثيق يغير نظرة العلامات التجارية إليك، سواء كنتِ مبدعة أو فنانة أو شركة.",
+      steps_kicker:"الخطوات، بالتفصيل", steps_h2:"ثلاث خطوات.<br>بدون أي مخاطرة من جانبك.",
+      step1_h3:"تدقيق مجاني", step1_p:"نحلل حسابك ونخبرك بصراحة عن حظوظك.", step1_time:"⏱ 24-48 ساعة", step1_risk:"بدون أي التزام. إذا كانت حظوظك ضعيفة، سنخبرك ولن تدفعي شيئاً.",
+      step2_h3:"تقديم الملف", step2_p:"نجهز ونقدم ملفك بالعناصر الصحيحة التي يتوقعها سناب شات بالفعل.", step2_time:"⏱ حتى 30 يوماً", step2_risk:"50% من الدفعة فقط في هذه المرحلة. والباقي بعد اعتماد الشارة.",
+      step3_h3:"الشارة والوصول مفتوحان", step3_p:"تم التوثيق، وتحقيق الدخل مفتوح: Spotlight وCreator Rewards والتعاون مع العلامات التجارية.", step3_time:"✓ متابعة حتى النهاية", step3_risk:"نبقى متاحين بعد الاعتماد لمساعدتك على بدء تحقيق الدخل.",
+      midproof_tag:"هذه الخطوات، في الواقع", midproof_quote:'"رُفضت 3 مرات بمفردي، وتم توثيقي خلال أسبوع معهم."', midproof_caption:"نتيجة تحققت باتباع الخطوات الثلاث أعلاه بالضبط.",
+      stepscta_p:"لا تزال هناك مقاعد متاحة هذا الشهر. التدقيق يستغرق دقيقتين ولا يكلف شيئاً.",
+      testimonials_kicker:"النتائج", testimonials_h2:"بكلماتهنّ.",
+      t1_result:"أسبوع واحد", t1_fr:'',
+      t2_result:"الدفعة الأولى", t2_fr:'',
+      t3_result:"أسبوعان", t3_fr:'',
+      t4_result:"الشفافية", t4_fr:'',
+      t_name:"الاسم، المدينة",
+      proof_kicker:"دليل خام", proof_h2:"بلا تمثيل.", proof_p:"مأخوذة مباشرة من محادثات حقيقية مع عميلاتنا، لقطة بلقطة.",
+      proof1:"دفعة Creator Rewards", proof2:"رسالة من علامة تجارية", proof3:"إشعار الشارة", proof4:"لوحة تحكم Spotlight",
+      compare_kicker:"الفرق الحقيقي", compare_h2:"بمفردك، أو بمرافقة.",
+      compare_col_solo:"بمفردك", compare_col_us:"مع SnapStar Agency",
+      compare_row1:"خطر الرفض", compare_row1_solo:"مرتفع، دون معرفة السبب", compare_row1_us:"تدقيق قبل الدفع",
+      compare_row2:"المدة", compare_row2_solo:"غير مؤكدة، قد تصل لأشهر", compare_row2_us:"حتى 30 يوماً",
+      compare_row3:"معايير الاعتماد", compare_row3_solo:"غير معروفة", compare_row3_us:"محللة وموضحة",
+      compare_closing:"الخيار واضح.",
+      scarcity_kicker:"لماذا الآن",
+      scarcity_h2:'نتابع عدداً محدوداً فقط من الملفات كل شهر، <span class="dim">لنرافق كل شخص فعلياً حتى النهاية.</span>',
+      scarcity_p:"عند الوصول إلى هذا العدد، تنتقل الطلبات الجديدة إلى قائمة انتظار للشهر التالي.",
+      pricing_kicker:"العرض", pricing_h2:"مرافقة كاملة من البداية إلى النهاية.",
+      price_plan:"العرض الأساسي", price_split:"50% عند التوقيع · 50% عند الاعتماد", price_badge:"تدقيق مجاني قبل الدفع، بدون أي مخاطرة",
+      price_item1:"تدقيق مجاني لحسابك", price_item2:"تجهيز وتقديم الملف", price_item3:"وصول مرافق لتحقيق الدخل",
+      price_item4:"متابعة حتى اعتماد الشارة", price_item5:"دعم مباشر عبر واتساب",
+      price_roi:"يتم مشاهدة أكثر من 10 مليارات فيديو يومياً على سناب شات. بدون شارة موثقة، لا يمكنك الوصول إلى أي جزء من هذا السوق الإعلاني، بغض النظر عن مواهبك.",
+      guarantee_kicker:"ضمانتنا", guarantee_h2:"لا ملف يقدم دون معرفة النتيجة.",
+      guarantee_p:"يتم تحليل حسابك قبل أن تدفعي أي شيء. إذا كانت حظوظك ضعيفة بالفعل، سنخبرك بصراحة، ولن تخسري شيئاً بالمحاولة.",
+      g_step1_label:"الخطوة 1", g1_h3:"بعد رسالتك مباشرة", g1_p:"تعبئين التدقيق المجاني، ونرد عليك عبر واتساب لتأكيد الاستلام.",
+      g_step2_label:"الخطوة 2", g2_h3:"خلال 24-48 ساعة", g2_p:"يتم تحليل حسابك، ونخبرك بصراحة عن حظوظك الحقيقية.",
+      g_step3_label:"الخطوة 3", g3_h3:"أنتِ تقررين", g3_p:"إذا كانت حظوظك جيدة، تختارين المتابعة. وإن لم تكن كذلك، لن تدفعي شيئاً وستعرفين وضعك بوضوح.",
+      faq_kicker:"FAQ", faq_h2:"أسئلتكِ، أجوبتنا.",
+      faq1_q:"كم يستغرق الوقت؟", faq1_a:"حتى 30 يوماً بين التقديم والاعتماد، حسب مدة معالجة سناب شات. كل يوم تأخير هو يوم من المحتوى المنشور بدون إمكانية تحقيق دخل. لهذا نبدأ التدقيق من أول رسالة.",
+      faq2_q:"وإذا تم رفض ملفي؟", faq2_a:"لهذا بالتحديد نحلل حسابك قبل أن نطلب منك أي دفع. نتحمل المخاطرة قبلك، لا بعدك.",
+      faq3_q:"لماذا وكالة أمريكية؟", faq3_a:"تعمل SnapStar Agency من الولايات المتحدة، وقد بنت على مر السنين خبرة حقيقية في عملية توثيق سناب شات وشبكة علاقات في هذا المجال. ساعدنا آلاف المبدعين والفنانين والعلامات التجارية حول العالم، ونعرف بدقة ما تتطلبه كل خطوة.",
+      faq4_q:"كيف يعمل الدفع على مرحلتين؟", faq4_a:"50% عند التوقيع لبدء ملفك، و50% فقط بعد اعتماد الشارة. لن تدفعي أبداً مقابل نتيجة لم تحصلي عليها بعد.",
+      finalcta_kicker:"الشارة القادمة التي تعتمد قد تكون شارتك.", finalcta_h2:"كل يوم انتظار هو يوم لن تستردّيه.",
+      footer_copy:"© 2026 SnapStar Agency. وكالة مقرها الولايات المتحدة.",
+      footer_privacy:"سياسة الخصوصية", footer_terms:"شروط الاستخدام",
+      exit_toast_text:"قبل أن تغادري، احجزي تدقيقك المجاني، يستغرق دقيقتين فقط.",
+      legal_privacy_text:"المعلومات المرسلة عبر نموذج التدقيق المجاني (الاسم الأول، اسم المستخدم في سناب شات، الدولة، عدد المتابعين، رقم واتساب، البريد الإلكتروني) تستخدم فقط لتجهيز تدقيقك وترسل مباشرة عبر واتساب. لا يتم تخزين أي بيانات على أي خادم أو قاعدة بيانات في هذا الموقع. لا تبيع SnapStar Agency هذه المعلومات ولا تشاركها مع أي طرف ثالث.",
+      legal_terms_text:"SnapStar Agency وكالة مستقلة تقدم دعماً للتوثيق على سناب شات والوصول لتحقيق الدخل، وهي غير مرتبطة رسمياً بشركة Snap Inc. تعتمد مواعيد ونتائج التوثيق على معايير وقرارات سناب شات نفسها، خارج تحكم الوكالة المباشر. يتم الدفع على مرحلتين&nbsp;: 50% عند التوقيع، و50% عند اعتماد الشارة.",
+      fab_aria:"راسلينا عبر واتساب",
+      modal_title:"احجزي تدقيقك المجاني", modal_close_aria:"إغلاق", modal_sub:"دقيقتان فقط. سنرد عليك مباشرة عبر واتساب بعد ذلك.",
+      modal_name_label:"اسمك الأول", modal_name_ph:"مثال: يارا",
+      modal_snap_label:"اسم المستخدم في سناب شات", modal_snap_ph:"@اسم_المستخدم",
+      modal_country_label:"الدولة", modal_followers_label:"متابعو سناب شات",
+      modal_whatsapp_label:"رقم واتساب (مع رمز الدولة)",
+      modal_email_label:"البريد الإلكتروني", modal_email_opt:"(اختياري)", modal_email_ph:"بريدك@ايميل.com",
+      modal_tried_label:"هل حاولتِ التوثيق بمفردك من قبل؟",
+      modal_select_placeholder:"اختر",
+      opt_country_jo:"الأردن", opt_country_ae:"الإمارات العربية المتحدة", opt_country_sa:"السعودية", opt_country_ma:"المغرب",
+      opt_country_tn:"تونس", opt_country_dz:"الجزائر", opt_country_eg:"مصر", opt_country_fr:"فرنسا", opt_country_qa:"قطر", opt_country_kw:"الكويت",
+      opt_country_bh:"البحرين", opt_country_om:"عمان", opt_country_lb:"لبنان", opt_country_iq:"العراق", opt_country_ps:"فلسطين", opt_country_ly:"ليبيا",
+      opt_country_sn:"السنغال", opt_country_ci:"ساحل العاج", opt_country_cm:"الكاميرون", opt_country_be:"بلجيكا", opt_country_can:"كندا", opt_country_other:"أخرى",
+      modal_country_other_ph:"حددي بلدك",
+      opt_f_50k200k:"50000 – 200000", opt_f_200kplus:"أكثر من 200000",
+      modal_tried_opt1:"نعم، مرة أو أكثر، وتم رفضي", modal_tried_opt2:"لا، لم أحاول أبداً",
+      modal_note:"معلوماتك تستخدم فقط لتجهيز تدقيقك المجاني وترسل مباشرة عبر واتساب. لا يتم تخزين أي بيانات في أي مكان آخر.",
+      modal_submit:"إرسال ومتابعة عبر واتساب"
+    }
+  };
+
+  let currentLang = 'fr';
+
+  function applyLanguage(lang){
+    currentLang = lang;
+    const dict = translations[lang];
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+    });
+
+    // Citation traduite masquée en arabe (déjà affichée dans sa langue d'origine)
+    document.querySelectorAll('.q-fr').forEach(el => {
+      el.style.display = (lang === 'ar') ? 'none' : '';
+    });
+
+    document.querySelectorAll('#langSwitch button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    // Rafraîchir le résultat du quiz si déjà affiché
+    if (quizCard) {
+      const resultPanel = quizCard.querySelector('.quiz-result');
+      if (resultPanel && !resultPanel.hidden) showQuizResult();
+    }
+  }
+
+  document.querySelectorAll('#langSwitch button').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+  });
+
+  // ---- DETECTION AUTOMATIQUE DE LA LANGUE DE L'APPAREIL ----
+  function detectLanguage(){
+    const navLang = (navigator.language || navigator.userLanguage || 'fr').toLowerCase();
+    if (navLang.startsWith('ar')) return 'ar';
+    if (navLang.startsWith('en')) return 'en';
+    return 'fr';
+  }
+  applyLanguage(detectLanguage());
+</script>
+
+</body>
+</html>
